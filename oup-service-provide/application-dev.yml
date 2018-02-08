@@ -27,8 +27,7 @@ spring:
     druid:
       oup:
         driver-class-name: com.mysql.jdbc.Driver
-        url: dbc:mysql://localhost:8066/udp
-        url: jdbc:mysql://13.58.87.174:3306/spcloud
+        url: jdbc:mysql://localhost:8066/udp
         username: root
         password: root
       initial-size: 10
