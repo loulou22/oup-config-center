@@ -1,22 +1,58 @@
 spring:
+  cache:
+    cache-names: commCache,sessionCache
   redis:
-    host: 172.17.0.1a
-    #assword: 123456
-    port: 6379
+    cluster:
+      max-redirects: 3
+      nodes: 127.0.0.1:7001,127.0.0.1:7002,127.0.0.1:7003
+      database: 1
+  pool:
+    max-active: 10
+    max-idle: 10
+    max-wait: -1
+    min-idle: 1
+  timeout: 2000
+  #jpa config
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
   datasource:
+    platform: mysql
+    data: classpath:config/mybatis/oup/oup-mysql.sql
+    initialize: true
+    continue-on-error: true
     druid:
-      url: jdbc:mysql://13.58.87.174:3306/spcloud
-      username: root
-      password: booszy
+      oup:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: dbc:mysql://localhost:8066/udp
+        url: jdbc:mysql://13.58.87.174:3306/spcloud
+        username: root
+        password: root
+      initial-size: 10
+      max-active: 60
+      min-idle: 10
+      max-wait: 10000
+      pool-prepared-statements: true
+      max-open-prepared-statements: 100
+      validation-query: select 1
+      validation-query-timeout: 1000
+      test-on-borrow: true
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 200000
+      max-evictable-idle-time-millis: 250000
+      filters: stat
+      filter.stat.enabled: true
+      filter.stat.log-slow-sql: true
+      filter.stat.slow-sql-millis: 2000
   application:
     name: springcloud-provider-config
-  profiles:
-    active: production
+#  profiles:
+#    active: production
 logging:
   level:
     root: info
