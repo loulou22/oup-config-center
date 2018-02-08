@@ -51,8 +51,6 @@ spring:
       filter.stat.slow-sql-millis: 2000
   application:
     name: springcloud-provider-config
-#  profiles:
-#    active: production
 logging:
   level:
     root: info
