@@ -1,4 +1,6 @@
 spring:
+  session:
+    store-type: redis
   cache:
     cache-names: commCache,sessionCache
   redis:
