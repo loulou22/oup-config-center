@@ -6,7 +6,7 @@ spring:
   redis:
     cluster:
       max-redirects: 2
-      nodes: 127.0.0.1:7001,127.0.0.1:7003
+      nodes: 127.0.0.1:7001,127.0.0.1:7002,127.0.0.1:7003
       database: 1
   pool:
     max-active: 10
