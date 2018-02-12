@@ -1,4 +1,11 @@
+server:
+  port: 8100
 spring:
+  application:
+    name: springcloud-provider-config
+  devtools:
+    restart:
+      enabled: false
   session:
     store-type: redis
   cache:
@@ -31,6 +38,7 @@ spring:
     initialize: true
     continue-on-error: true
     druid:
+    #druid多数据源设置
       oup:
         driver-class-name: com.mysql.jdbc.Driver
         url: jdbc:mysql://localhost:8066/oup
@@ -54,8 +62,7 @@ spring:
       filter.stat.enabled: true
       filter.stat.log-slow-sql: true
       filter.stat.slow-sql-millis: 2000
-  application:
-    name: springcloud-provider-config
+#*****************************logging config**************************
 logging:
   level:
     root: info
@@ -63,5 +70,3 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
     com.yasaka.stock : debug
-server:
-  port: 8100
