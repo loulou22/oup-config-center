@@ -62,11 +62,15 @@ spring:
       filter.stat.enabled: true
       filter.stat.log-slow-sql: true
       filter.stat.slow-sql-millis: 2000
+mybatis:
+  fill:
+    com.oup.service.config.entity.oup.base:
 #*****************************logging config**************************
 logging:
-  level:
-    root: info
-    org.hibernate : info
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-    com.yasaka.stock : debug
+  config: classpath:logback-spring.xml
+#  level:
+#    root: info
+#    org.hibernate : info
+#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+#    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+#    com.yasaka.stock : debug
