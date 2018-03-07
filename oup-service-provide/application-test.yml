@@ -15,8 +15,8 @@ spring:
       password: booszy
   application:
     name: springcloud-provider-config
-  profiles:
-    active: test
+ # profiles:
+  #  active: test
 logging:
   level:
     root: info
