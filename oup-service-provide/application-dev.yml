@@ -69,10 +69,8 @@ mybatis:
     com.oup.service.config.entity.oup.base:
 #*****************************logging config**************************
 logging:
-  config: classpath:logback-spring.xml
-#  level:
-#    root: info
-#    org.hibernate : info
-#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-#    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-#    com.yasaka.stock : debug
+  file: D:/logs/server.log
+  level:
+    root: info
+    com.yasaka.stock : info
+    com.oup.service: debug
