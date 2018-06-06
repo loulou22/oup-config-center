@@ -36,6 +36,7 @@ spring:
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
   datasource:
     platform: mysql
+    #schema: classpath:config/mybatis/oup/oup-mysql.sql
     data: classpath:config/mybatis/oup/oup-mysql.sql
     initialize: true
     continue-on-error: true
