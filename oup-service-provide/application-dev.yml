@@ -82,20 +82,6 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      #注册服务到eureka上，记住这里要加上eureka-server的用户名和密码
-      defaultZone: http://root:root123@localhost:8761/eureka
-  instance:
-    preferIpAddress: true
-    #可能比较长，复制的时候请写在一行
-    instanceId: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
-    appname: oup-configserver
-    leaseRenewalIntervalInSeconds: 5
-    leaseExpirationDurationInSeconds: 15
-eureka:
-  client:
-    healthcheck:
-      enabled: true
-    serviceUrl:
       defaultZone: http://root:root123@localhost:8761/eureka
   instance:
     preferIpAddress: true
