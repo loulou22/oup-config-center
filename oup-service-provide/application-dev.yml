@@ -77,15 +77,3 @@ logging:
     root: info
     com.yasaka.stock : info
     com.oup.service: debug
-eureka:
-  client:
-    healthcheck:
-      enabled: true
-    serviceUrl:
-      defaultZone: http://root:root123@localhost:8761/eureka
-  instance:
-    preferIpAddress: true
-    instanceId: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
-    appname: oup-service-provide
-    leaseRenewalIntervalInSeconds: 30
-    leaseExpirationDurationInSeconds: 90
