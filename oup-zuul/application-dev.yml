@@ -1,0 +1,38 @@
+server:
+  port: 8400
+spring:
+  redis:
+    cluster:
+      nodes: 127.0.0.1:7001,127.0.0.1:7002,127.0.0.1:7003
+      testOnReturn: true
+      maxIdle: 10
+      minIdle: 2
+      maxWaitMills: 3000
+      testOnBorrow: true
+      maxTotal: 4
+  profiles:
+    active: dev
+zuul:
+  #ignoredServices: *
+  routes:
+    oup-web: /web/**
+    oup-service: /com/**
+    
+keycloak:
+  realm : auth-zuul
+  auth-server-url : http://localhost:8080/auth
+  ssl-required : external
+  resource : oup-zuul
+  credentials.secret : 11111111-1111-1111-1111-111111111111
+  use-resource-role-mappings : true
+  enable-basic-auth: true
+  securityConstraints:
+    - authRoles: user
+      securityCollections:
+         - patterns:  /provider/user/info
+    - authRoles: users
+      securityCollections:
+         - patterns:  /web1/
+    - authRoles: test
+      securityCollections:
+         - patterns:  /provider/user/list
