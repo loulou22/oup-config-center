@@ -13,11 +13,14 @@ spring:
   profiles:
     active: dev
 zuul:
-  #ignoredServices: *
+  ignoredServices: '*'
   routes:
-    oup-web: /web/**
-    oup-service: /com/**
-    
+    weburl:
+      path: /web/**
+      url: http://localhost:8200/
+    websrv:
+      path: /web2/**
+      serviceId: oup-web
 keycloak:
   realm : auth-zuul
   auth-server-url : http://localhost:8080/auth
