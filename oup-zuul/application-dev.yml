@@ -13,6 +13,10 @@ spring:
   profiles:
     active: dev
 zuul:
+  ribbon:
+    #zuul中关于ribbon加载，true为启动加载，false为首次调研加载
+    eager-load:
+      enabled: true
   ignoredServices: '*'
   routes:
     weburl:
@@ -35,7 +39,7 @@ keycloak:
          - patterns:  /provider/user/info
     - authRoles: users
       securityCollections:
-         - patterns:  /web1/
+         - patterns:  /web/
     - authRoles: test
       securityCollections:
-         - patterns:  /provider/user/list
+         - patterns:  /web2/
