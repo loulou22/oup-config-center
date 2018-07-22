@@ -24,7 +24,7 @@ zuul:
       url: http://localhost:8200/
     websrv:
       path: /web2/**
-      serviceId: oup-web
+      serviceId: oup-console
 keycloak:
   realm : auth-zuul
   auth-server-url : http://localhost:8080/auth
