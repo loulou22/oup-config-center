@@ -14,7 +14,7 @@ spring:
   thymeleaf:
   #生产环境建议打开，便于文件加载加速，也可考虑nginx、cdn对资源加速。
     cache: false
-    prefix: classpath:/templates/
+    prefix: classpath:/templates/,classpath:/static/
     suffix: .html
     mode: HTML
     encoding: UTF-8
