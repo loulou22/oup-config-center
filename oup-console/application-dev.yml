@@ -10,7 +10,7 @@ spring:
   application:
     name: oup-console
   resources:
-    static-locations:  classpath:/static/
+    static-locations: classpath:/static/
   zipkin:
     baseUrl: http://localhost:9411
   devtools:
