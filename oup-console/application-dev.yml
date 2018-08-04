@@ -1,10 +1,16 @@
 server:
   port: 8200
+  servlet:
+    session:
+      # 单位为秒
+      timeout: 1800
 spring:
   profiles:
     active: dev
   application:
     name: oup-console
+  mvc:
+    static-path-pattern: /**
   zipkin:
     baseUrl: http://localhost:9411
   devtools:
@@ -18,9 +24,11 @@ spring:
     suffix: .html
     mode: HTML
     encoding: UTF-8
-    static-locations: classpath:/static/
   session:
     store-type: redis
+    redis:
+      flush-mode: on-save
+      namespace: console:session
   cache:
     cache-names: commCache,sessionCache
   redis:
@@ -42,6 +50,10 @@ spring:
 logging:
   file: D:/logs/web.log
   level:
-    root: info
+    root: debug
     com.yasaka.stock : info
     com.oup.service: debug
+#*****************************app config**************************
+console:
+  SUPER_USER_TAG: admin
+  SUPER_USER_PWD: admin123
