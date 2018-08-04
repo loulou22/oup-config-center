@@ -32,6 +32,7 @@ spring:
   cache:
     cache-names: commCache,sessionCache
   redis:
+    timeout: 60
     cluster:
       max-redirects: 3
       nodes:
