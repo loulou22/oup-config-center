@@ -63,5 +63,6 @@ logging:
     com.oup.service: debug
 #*****************************app config**************************
 console:
+  APP_NAME: 统一开发平台
   SUPER_USER_TAG: admin
   SUPER_USER_PWD: admin123
