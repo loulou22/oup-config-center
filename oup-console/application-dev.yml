@@ -74,3 +74,4 @@ console:
     -para1:22
   thymeleaf:
     static_loc: http://localhost:8200
+    test: 13
