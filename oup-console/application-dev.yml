@@ -65,7 +65,8 @@ logging:
 #支持自定义扩展属性
 console:
   app_name: 统一开发平台
-  man_mode: 0  #公共管理模式 0-标准模式 1-复杂模式，环境变量使用man_mode
+  #公共管理模式 0-标准模式 1-复杂模式，环境变量使用man_mode
+  man_mode: 0
   super_user_id: admin
   super_user_pwd: admin123
   err_url_403: /error/403.html
