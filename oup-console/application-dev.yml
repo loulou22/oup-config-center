@@ -64,13 +64,13 @@ logging:
 #*****************************app config**************************
 #支持自定义扩展属性
 console:
-  APP_NAME: 统一开发平台
-  SUPER_USER_TAG: admin
-  SUPER_USER_PWD: admin123
-  ERR_URL_403: /error/403.html
+  app_name: 统一开发平台
+  super_user_id: admin
+  super_user_pwd: admin123
+  err_url_403: /error/403.html
   CUS_PARA:
-    - para1:22
+    -para1:22
   thymeleaf:
     - SR_LOC: http://localhost:8200/
-    - SR_LOC:22
-    - SR_LOC: 23
+    - SR_LOC1: 22
+    - SR_LOC2: 23
