@@ -71,4 +71,6 @@ console:
   CUS_PARA:
     - para1:22
   thymeleaf:
-    - SR_LOC:http://localhost:8200/
+    - SR_LOC: http://localhost:8200/
+    - SR_LOC:22
+    - SR_LOC: 23
