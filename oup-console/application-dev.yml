@@ -58,11 +58,17 @@ spring:
 logging:
   file: D:/logs/web.log
   level:
-    root: debug
+    root: info
     com.yasaka.stock : info
     com.oup.service: debug
 #*****************************app config**************************
+#支持自定义扩展属性
 console:
   APP_NAME: 统一开发平台
   SUPER_USER_TAG: admin
   SUPER_USER_PWD: admin123
+  ERR_URL_403: /error/403.html
+  CUS_PARA:
+    - para1:22
+  thymeleaf:
+    - SR_LOC:http://localhost:8200/
