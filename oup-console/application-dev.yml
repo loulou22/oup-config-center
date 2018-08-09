@@ -58,7 +58,7 @@ spring:
 logging:
   file: D:/logs/web.log
   level:
-    root: info
+    root: debug
     com.yasaka.stock : info
     com.oup.service: debug
 #*****************************app config**************************
@@ -74,4 +74,4 @@ console:
     -para1:22
   thymeleaf:
     static_loc: http://localhost:8200
-    test: 13
+
