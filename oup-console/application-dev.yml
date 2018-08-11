@@ -58,7 +58,7 @@ spring:
 logging:
   file: D:/logs/web.log
   level:
-    root: debug
+    root: info
     com.yasaka.stock : info
     com.oup.service: debug
 #*****************************app config**************************
