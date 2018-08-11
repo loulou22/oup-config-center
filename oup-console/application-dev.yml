@@ -72,6 +72,7 @@ console:
   err_url_403: /error/403.html
   CUS_PARA:
     -para1:22
+  login_success_url: /index
   thymeleaf:
     static_loc: http://localhost:8200
 
