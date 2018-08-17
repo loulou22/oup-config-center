@@ -61,6 +61,8 @@ logging:
     root: info
     com.yasaka.stock : info
     com.oup.service: debug
+  pattern:
+    console: %-d{yyyy-MM-dd HH:mm:ss}  [ %t:%r ] - [ %p ]  %m%n
 #*****************************app config**************************
 #支持自定义扩展属性
 console:
