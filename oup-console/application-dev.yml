@@ -61,8 +61,6 @@ logging:
     root: info
     com.yasaka.stock : info
     com.oup.service: debug
-  pattern:
-    console: %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg %n
 #*****************************app config**************************
 #支持自定义扩展属性
 console:
