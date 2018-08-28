@@ -71,7 +71,7 @@ mybatis:
   configuration:
     mapUnderscoreToCamelCase: true
   fill:
-    com.oup.service.config.entity.oup.base.UdpIdFill:
+    com.oup.compents.base.entity.UdpIdFill:
 #*****************************logging config**************************
 logging:
   file: D:/logs/server.log
