@@ -70,8 +70,6 @@ spring:
 mybatis:
   configuration:
     mapUnderscoreToCamelCase: true
-  fill:
-    com.oup.compents.base.entity.UdpIdFill: udp_id
 #*****************************logging config**************************
 logging:
   file: D:/logs/server.log
