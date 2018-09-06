@@ -74,6 +74,7 @@ console:
     -para1:22
   login_success_url: /index
   login_fail_url: /
-  thymeleaf:
-    static_loc: http://localhost:8200
+#cdn专用
+#  thymeleaf:
+#    static_loc: http://localhost:8200
 
