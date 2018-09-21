@@ -76,7 +76,8 @@ console:
   login_fail_url: /
   #文件传输根地址
   file_base_url: D:\workspace\ext
-#cdn专用
+#cdn专用、文件传输服务器
 #  thymeleaf:
 #    static_loc: http://localhost:8200
+#    fileSrv_loc: http://localhost:8200
 
