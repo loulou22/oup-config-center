@@ -7,6 +7,10 @@ spring:
     name: oup-service
   zipkin:
    baseUrl: http://localhost:9411
+management:
+  health:
+    redis:
+      enabled: false
   devtools:
     restart:
       enabled: false
