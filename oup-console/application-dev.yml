@@ -4,6 +4,10 @@ server:
     session:
       # 单位为秒
       timeout: 1800
+management:
+  endpoint:
+    shutdown:
+      enabled: rue
 spring:
   profiles:
     active: dev
