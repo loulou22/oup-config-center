@@ -5,9 +5,9 @@ server:
       # 单位为秒
       timeout: 1800
 management:
-  endpoint:
-    shutdown:
-      enabled: rue
+  health:
+    redis:
+      enabled: false
 spring:
   profiles:
     active: dev
