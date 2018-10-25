@@ -35,13 +35,14 @@ spring:
     timeout: 60
     cluster:
       max-redirects: 3
-      nodes:
-        - localhost:7000
-        - localhost:7001
-        - localhost:7002
-        - localhost:7003
-        - localhost:7004
-        - localhost:7005
+#      nodes:
+#        - localhost:7000
+#        - localhost:7001
+#        - localhost:7002
+#        - localhost:7003
+#        - localhost:7004
+#        - localhost:7005
+      nodes: localhost:7001,localhost:7002,localhost:7003
       testOnReturn: true
       maxIdle: 10
       minIdle: 2
