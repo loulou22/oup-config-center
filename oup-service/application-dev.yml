@@ -32,7 +32,7 @@ management:
     maxIdle: 10
     maxWait: -1
     minIdle: 1
-  timeout: 2000
+    timeout: 2000
   #jpa config
   jpa:
     databasePlatform: org.hibernate.dialect.MySQLDialect
@@ -54,23 +54,23 @@ management:
       oup:
         url: jdbc:mysql://localhost:8066/oup?useUnicode=true&characterEncoding=UTF8
         #druid多数据源设置= 初始化大小，最小，最大
-      initialSize: 10
-      maxActive: 60
-      minIdle: 10
-       # 配置获取连接等待超时的时间
-      maxWait: 10000
-      poolPreparedStatements: true
-      maxOpenPreparedStatements: 100
-      validationQuery: select 1
-      validationQueryTimeout: 1000
-      testOnBorrow: false
-      testOnReturn: false
-      testWhileIdle: true
-        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
-      timeBetweenEvictionRunsMillis: 60000
-       # 配置一个连接在池中最小生存的时间，单位是毫秒
-      minEvictableIdleTimeMillis: 200000
-      maxEvictableIdleTimeMillis: 250000
+#      initialSize: 10
+#      maxActive: 60
+#      minIdle: 10
+#       # 配置获取连接等待超时的时间
+#      maxWait: 10000
+#      poolPreparedStatements: true
+#      maxOpenPreparedStatements: 100
+#      validationQuery: select 1
+#      validationQueryTimeout: 1000
+#      testOnBorrow: false
+#      testOnReturn: false
+#      testWhileIdle: true
+#        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+#      timeBetweenEvictionRunsMillis: 60000
+#       # 配置一个连接在池中最小生存的时间，单位是毫秒
+#      minEvictableIdleTimeMillis: 200000
+#      maxEvictableIdleTimeMillis: 250000
 #      filters: stat,wall,log4j
 #      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
 #      connectionProperties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
@@ -97,7 +97,7 @@ logging:
   file: D:/logs/service.log
   level:
     root: debug
-    com.yasaka.stock : info
+    com.yasaka.stock: info
 #    com.oup.service: debug
 #    org.springframework: info
 #    org.springframework.jdbc: debug
