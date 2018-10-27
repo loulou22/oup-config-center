@@ -77,7 +77,7 @@ mybatis:
     mapUnderscoreToCamelCase: true
 #*****************************logging config**************************
 logging:
-  file: D:/logs/server.log
+  file: D:/logs/service.log
   level:
     root: debug
     com.yasaka.stock : info
