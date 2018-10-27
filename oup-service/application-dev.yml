@@ -48,11 +48,11 @@ management:
     continue-on-error: true
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: root
       oup:
-        driver-class-name: com.mysql.jdbc.Driver
         url: jdbc:mysql://localhost:8066/oup?useUnicode=true&characterEncoding=UTF8
-        username: root
-        password: root
       initial-size: 10 #druid多数据源设置= 初始化大小，最小，最大
       max-active: 60
       min-idle: 10
