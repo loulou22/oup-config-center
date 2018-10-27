@@ -95,3 +95,8 @@ logging:
     root: debug
     com.yasaka.stock : info
     com.oup.service: debug
+    org.springframework: info
+    org.springframework.jdbc: debug
+    org.springframework.boot: info
+    com.alibaba.druid: debug
+    executableSql: debug
