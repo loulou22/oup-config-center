@@ -47,13 +47,13 @@ management:
     initialize: true
     continue-on-error: true
     type: com.alibaba.druid.pool.DruidDataSource
+    oup:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:8066/oup
+      username: root
+      password: root
     druid:
     #druid多数据源设置
-      oup:
-        driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost:8066/oup
-        username: root
-        password: root
       initial-size: 10
       max-active: 60
       min-idle: 10
