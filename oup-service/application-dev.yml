@@ -47,6 +47,7 @@ management:
     initialize: true
     continue-on-error: true
     driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
     druid:
     #druid多数据源设置
       oup:
