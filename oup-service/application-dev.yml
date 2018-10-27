@@ -47,14 +47,13 @@ management:
     initialize: true
     continue-on-error: true
     type: com.alibaba.druid.pool.DruidDataSource
-    oup:
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:8066/oup
-      username: root
-      password: root
     druid:
-    #druid多数据源设置
-      initial-size: 10
+      oup:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:8066/oup
+        username: root
+        password: root
+      initial-size: 10 #druid多数据源设置
       max-active: 60
       min-idle: 10
       max-wait: 10000
@@ -69,9 +68,12 @@ management:
       min-evictable-idle-time-millis: 200000
       max-evictable-idle-time-millis: 250000
       filters: stat
-      filter.stat.enabled: true
-      filter.stat.log-slow-sql: true
-      filter.stat.slow-sql-millis: 2000
+      filter:
+        stat:
+          enabled: true
+          log-slow-sql: true
+          slow-sql-millis: 2000
+          db-type: mysql
 mybatis:
   configuration:
     mapUnderscoreToCamelCase: true
