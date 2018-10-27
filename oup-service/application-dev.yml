@@ -67,10 +67,6 @@ management:
       time-between-eviction-runs-millis: 60000
       min-evictable-idle-time-millis: 200000
       max-evictable-idle-time-millis: 250000
-      filters: stat
-      filter.stat.enabled: true
-      filter.stat.log-slow-sql: true
-      filter.stat.slow-sql-millis: 2000
 mybatis:
   configuration:
     mapUnderscoreToCamelCase: true
@@ -78,6 +74,6 @@ mybatis:
 logging:
   file: D:/logs/server.log
   level:
-    root: info
-    com.yasaka.stock : info
+    root: debug
+    com.yasaka.stock: info
     com.oup.service: debug
