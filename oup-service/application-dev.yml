@@ -71,24 +71,24 @@ management:
        # 配置一个连接在池中最小生存的时间，单位是毫秒
       minEvictableIdleTimeMillis: 200000
       maxEvictableIdleTimeMillis: 250000
-      filters: stat,wall,log4j
-      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
-      connectionProperties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
-      webStatFilter:
-        enabled: true
-        urlPattern: "/*"
-        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
-        # 配置DruidStatViewServlet
-      statViewServlet:
-        urlPattern: "/druid/*"
-        # IP白名单(没有配置或者为空，则允许所有访问)  allow: 127.0.0.1,192.168.163.1
-        # IP黑名单 (存在共同时，deny优先于allow) deny: 192.168.1.73
-        #  禁用HTML页面上的“Reset All”功能
-        resetEnable: false
-        # 登录名
-        loginUsername: admin
-        # 登录密码
-        loginPassword: 123456
+#      filters: stat,wall,log4j
+#      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+#      connectionProperties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
+#      webStatFilter:
+#        enabled: true
+#        urlPattern: "/*"
+#        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+#        # 配置DruidStatViewServlet
+#      statViewServlet:
+#        urlPattern: "/druid/*"
+#        # IP白名单(没有配置或者为空，则允许所有访问)  allow: 127.0.0.1,192.168.163.1
+#        # IP黑名单 (存在共同时，deny优先于allow) deny: 192.168.1.73
+#        #  禁用HTML页面上的“Reset All”功能
+#        resetEnable: false
+#        # 登录名
+#        loginUsername: admin
+#        # 登录密码
+#        loginPassword: 123456
 mybatis:
   configuration:
     mapUnderscoreToCamelCase: true
