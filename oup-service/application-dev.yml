@@ -96,11 +96,11 @@ mybatis:
 logging:
   file: D:/logs/service.log
   level:
-    root: debug
+    root: info
     com.yasaka.stock: info
-#    com.oup.service: debug
+    com.oup.service: info
 #    org.springframework: info
 #    org.springframework.jdbc: debug
 #    org.springframework.boot: info
-#    com.alibaba.druid: debug
-#    executableSql: debug
+#    com.alibaba.druid: info
+#    executableSql: info
