@@ -57,13 +57,13 @@ spring:
     max-idle: 10
     max-wait: -1
     min-idle: 1
-  timeout: 2000
+    timeout: 2000
 #*****************************logging config**************************
 logging:
   file: D:/logs/web.log
   level:
     root: info
-    com.yasaka.stock : info
+    com.yasaka.stock: info
     com.oup.service: debug
 #*****************************app config**************************
 #支持自定义扩展属性
