@@ -1,5 +1,9 @@
 server:
   port: 8100
+management:
+  health:
+    redis:
+      enabled: false
 spring:
   profiles:
     active: dev
@@ -7,17 +11,13 @@ spring:
     name: oup-service
   zipkin:
    baseUrl: http://localhost:9411
-management:
-  health:
-    redis:
-      enabled: false
   devtools:
     restart:
       enabled: false
   session:
-    store-type: redis
+    storeType: redis
   cache:
-    cache-names: commCache,sessionCache
+    cacheNames: commCache,sessionCache
   redis:
     cluster:
       nodes: localhost:7001,localhost:7002,localhost:7003
@@ -28,53 +28,79 @@ management:
       testOnBorrow: true
       maxTotal: 4
   pool:
-    max-active: 10
-    max-idle: 10
-    max-wait: -1
-    min-idle: 1
+    maxActive: 10
+    maxIdle: 10
+    maxWait: -1
+    minIdle: 1
     timeout: 2000
   #jpa config
   jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
-    show-sql: true
+    databasePlatform: org.hibernate.dialect.MySQLDialect
+    showSql: true
     hibernate:
-      ddl-auto: none
-      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      ddlAuto: none
+      namingStrategy: org.hibernate.cfg.ImprovedNamingStrategy
   datasource:
     platform: mysql
     #schema: classpath:config/mybatis/oup/oup-mysql.sql
     data: classpath:config/mybatis/oup/oup-mysql.sql
     initialize: true
-    continue-on-error: true
-    driverClassname: com.mysql.jdbc.Driver
+    continueOnError: true
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
-    #druid多数据源设置
+      driverClassName: com.mysql.jdbc.Driver
+      username: root
+      password: root
       oup:
-        url: jdbc:mysql://localhost:8066/oup
-        username: root
-        password: root
-      initial-size: 10
-      max-active: 60
-      min-idle: 10
-      max-wait: 10000
-      pool-prepared-statements: true
-      max-open-prepared-statements: 100
-      validation-query: select 1
-      validation-query-timeout: 1000
-      test-on-borrow: true
-      test-on-return: false
-      test-while-idle: true
-      time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 200000
-      max-evictable-idle-time-millis: 250000
+        url: jdbc:mysql://localhost:8066/oup?useUnicode=true&characterEncoding=UTF8
+        #druid多数据源设置= 初始化大小，最小，最大
+      initialSize: 10
+      maxActive: 60
+      minIdle: 10
+       # 配置获取连接等待超时的时间
+      maxWait: 10000
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 100
+      validationQuery: select 1
+      validationQueryTimeout: 1000
+      testOnBorrow: false
+      testOnReturn: false
+      testWhileIdle: true
+        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+       # 配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 200000
+      maxEvictableIdleTimeMillis: 250000
+      filters: stat,wall,log4j
+      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      connectionProperties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
+      webStatFilter:
+        enabled: true
+        urlPattern: "/*"
+        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+        # 配置DruidStatViewServlet
+      statViewServlet:
+        urlPattern: "/druid/*"
+        # IP白名单(没有配置或者为空，则允许所有访问)  allow: 127.0.0.1,192.168.163.1
+        # IP黑名单 (存在共同时，deny优先于allow) deny: 192.168.1.73
+        #  禁用HTML页面上的“Reset All”功能
+        resetEnable: false
+        # 登录名
+        loginUsername: admin
+        # 登录密码
+        loginPassword: 123456
 mybatis:
   configuration:
     mapUnderscoreToCamelCase: true
 #*****************************logging config**************************
 logging:
-  file: D:/logs/server.log
+  file: D:/logs/service.log
   level:
     root: debug
     com.yasaka.stock: info
-    com.oup.service: debug
+#    com.oup.service: debug
+#    org.springframework: info
+#    org.springframework.jdbc: debug
+#    org.springframework.boot: info
+#    com.alibaba.druid: debug
+#    executableSql: debug
